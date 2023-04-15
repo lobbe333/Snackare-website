@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
 import '../styles/SpeakerProfile.css'
 import { useParams } from 'react-router-dom'
 import Slider from 'react-slick';
@@ -55,7 +55,7 @@ export default function SpeakerProfile({ speakers }) {
           <div className='speakerProfile-image-container'>
             <img src={speaker.imgUrl} alt={speaker.name} className='speakerProfile-image' />
           </div>
-          <div className='speakerProfile-reviews-container'>
+          <div className='speakerProfile-reviews-container hide-on-mobile'>
             <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
             <Slider {...sliderSettings}>
               {reviewElements}
@@ -67,6 +67,12 @@ export default function SpeakerProfile({ speakers }) {
           <p className='speakerProfile-longDescription' dangerouslySetInnerHTML={{ __html: speaker.longDescription }}></p>
           <h1 className='speakerProfile-exampleLectures-header'>Exempelföreläsningar</h1>
           {exampleLecturesElements}
+        </div>
+        <div className='speakerProfile-reviews-container hide-on-desktop'>
+          <h1 className='speakerProfile-reviews-header'>Vad andra säger</h1>
+          <Slider {...sliderSettings}>
+            {reviewElements}
+          </Slider>
         </div>
       </div>
       {showRequestForm && <RequestForm

@@ -15,6 +15,12 @@ body {
   background-size: 200%;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-size: 250%;
+  }
+}
+
 @media (min-width: 767px) {
   .hide-on-desktop {
     display: none;

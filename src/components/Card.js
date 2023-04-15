@@ -39,7 +39,7 @@ export default function Card({ speaker }) {
         </div>
         <div className='card-back' style={{ backgroundImage: `url(${speaker.imgUrl})` }}>
           <div className='card-information-back'>
-            <h2 className='name'>{speaker.name}</h2>
+            <h2 className='name name-mobile'>{speaker.name}</h2>
             <p>{speaker.shortDescription}</p>
             <div className='topics-container'>
               {topicElements}

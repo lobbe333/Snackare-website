@@ -14,7 +14,7 @@
     grid-template-columns: repeat(2, 1fr);
     margin-left: 1rem;
     margin-right: 1rem;
-    gap: 2rem;
+    gap: 0.5rem;
     overflow-x: hidden;
   }
 }
@@ -29,8 +29,8 @@
 
 @media (max-width: 768px) {
   .card {
-    height: 20rem;
-    width: calc(80%);
+    height: 18rem;
+    width: calc(100%);
   }
 }
 
@@ -86,7 +86,7 @@
   .card-information {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     height: 100%;
     width: 100%;
   }
@@ -109,6 +109,12 @@
   padding-left: 15px;
 }
 
+@media (max-width: 767px) {
+  .name-and-roles-container {
+    padding: 0;
+  }
+}
+
 
 .name {
   margin-top: 10px;
@@ -117,7 +123,20 @@
   font-weight: 700;
   font-size: 25x;
   color: #273B7B;
+}
 
+
+
+@media (max-width: 767px) {
+  .name {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .name-mobile{
+    display: none;
+  }
 }
 
 .information-text {
@@ -150,6 +169,14 @@
   margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+  .roles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .role,
 .topic {
   font-family: 'Open Sans', sans-serif;
@@ -165,6 +192,17 @@
   padding-right: 10px;
   white-space: nowrap;
   /* Hindra radbrytning i ämnen */
+}
+
+@media (max-width: 767px) {
+
+  .role,
+  .topic {
+    font-size: 10px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
 
 .topic {

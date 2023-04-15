@@ -109,3 +109,59 @@
   color: white;
   border: none;
 }
+
+@media (max-width: 767px) {
+  .speakerProfile {
+    margin-left: 20px;
+  }
+
+  .speakerProfile-name-bookButton-container {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .speakerProfile-content {
+    flex-direction: column;
+  }
+
+  .speakerProfile-header-text {
+    width: 100%;
+  }
+
+  .speakerProfile-image {
+    height: 300px;
+    width: 90vw;
+    object-position: top;
+  }
+
+  .speakerProfile-header-name {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .speakerProfile-header-longDescription {
+    font-size: 30px;
+  }
+
+  .speakerProfile-exampleLectures-header {
+    font-size: 24px;
+  }
+
+  .speakerProfile-reviews-header {
+    font-size: 24px;
+  }
+
+  .slick-list {
+    width: 80vw;
+  }
+
+  .book-speaker-button {
+    width: 200px;
+    font-size: 17px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    background-color: #273B7B;
+    color: white;
+  }
+}

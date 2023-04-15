@@ -27,3 +27,26 @@
     color: #273B7B;
     width: 700px;
 }
+
+@media (max-width: 767px) {
+    .about {
+      width: 100%;
+      padding-left: 20px;
+    }
+  
+    .about-header {
+      font-size: 35px;
+      width: 100%;
+    }
+  
+    .employee-cards {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .employees-header {
+      font-size: 35px;
+      width: 100%;
+    }
+  }

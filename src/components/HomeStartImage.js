@@ -18,8 +18,8 @@ export default function HomeStartImage() {
             <div className='home-image-container'>
                 <img src='navbar_omar.jpeg' className='home-image' />
                 <div className='home-image-text'>
-                    <h1 className='header-homeStartImage'>Inspiration som berör</h1>
-                    <h2 className='underHeader-homeStartImage'>Ta ditt event till nya höjder</h2>
+                    <h1 className='header-homeStartImage'>Snackare</h1>
+                    <h2 className='underHeader-homeStartImage'>Där idéer möts och gränser utmanas</h2>
                     <button onClick={handleOpenRequestForm}>Skicka förfrågan</button>
                     {showRequestForm && <RequestForm handleCloseRequestForm={handleCloseRequestForm}/>}
                 </div>  

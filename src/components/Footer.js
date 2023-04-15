@@ -16,13 +16,13 @@ export default function Footer() {
             </div>  */}
             <div className='footer-bottom'>
                 <div>
-                    <h3>Contact Us:</h3>
-                    <p>Email: kontakt@snackare.se</p>
+                    <h3>Kontakta oss</h3>
+                    <p>Mail: kontakt@snackare.se</p>
                     <p>Telefon: +46760149507</p>
                     <p></p>
                 </div>
                 <div className='follow-us'> 
-                    <h3>Follow Us:</h3>
+                    <h3>Följ oss</h3>
                     <ul className='social-media-list'>
                         <li>
                                 <FaInstagram/>
