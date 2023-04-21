@@ -11,12 +11,32 @@ import { db } from './config/firebase'
 import { getDocs, collection } from 'firebase/firestore'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, ScrollRestoration } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
+import TidioChat from './components/TidioChat';
+import { v4 as uuidv4 } from 'uuid';
+
+const getVisitorId = () => {
+  let visitorId = localStorage.getItem('visitorId');
+  if (!visitorId) {
+    visitorId = uuidv4();
+    localStorage.setItem('visitorId', visitorId);
+  }
+  return visitorId;
+};
 
 
 function App() {
   const [speakers, setSpeakers] = useState([])
 
   const speakersCollectionRef = collection(db, "speakers")
+
+  const tidioKey = '3x3nqoesg5re64kbwcp6esvufvwasoqn'; // Byt ut 'UNIQUE_ID' mot din faktiska unika ID
+
+  const visitor = {
+    distinct_id: getVisitorId(),
+    email: "", // visitor email
+    name: getVisitorId(), // Visitor name
+    phone: "" //Visitor phone
+  };
 
   useEffect(() => {
     const getSpeakers = async () => {
@@ -45,7 +65,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={
-            <Home/>
+            <Home
+              speakers={speakers}
+            />
           } />
           <Route path='/speakers' element={
             <SpeakersWrapper
@@ -61,6 +83,7 @@ function App() {
           }
           />
         </Routes>
+        <TidioChat tidioKey={tidioKey} visitor={visitor} />
         <Footer />
       </div>
     </Router>

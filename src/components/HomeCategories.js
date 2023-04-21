@@ -11,18 +11,19 @@ export default function HomeCategories() {
         setCategory(category);
         navigate('/speakers', { state: { category } });
         console.log("HomeCategories.js i funktion " + category);
-      };
+    };
 
     const handleAllSpeakersClick = () => {
         navigate('/speakers')
     }
-      
 
-        console.log("HomeCategories.js " + category)
+
+    console.log("HomeCategories.js " + category)
 
     return (
         <div>
             <div className='home-categories-container'>
+                <h1 className='categories-header'>Våra Snackare</h1>
                 <div className='categories' data-aos='fade-down'>
                     <div className='category category-forelasare' onClick={() => handleCategory('lecturer')}>
                         <h2 className='category-header'>Föreläsare</h2>

@@ -2,8 +2,10 @@ import { React, useState, useEffect } from 'react'
 import Card from './Card'
 import '../styles/Speakers.css'
 import { Link, useLocation } from 'react-router-dom'
+import { isMobile } from 'react-device-detect';
 
-export default function Speakers({ speakers, category, speakersHeader }) {
+
+export default function Speakers({ speakers, category, speakersHeader, isFlipped }) {
     const [search, setSearch] = useState("")
 
     const handleSearch = (event) => {
@@ -56,13 +58,21 @@ export default function Speakers({ speakers, category, speakersHeader }) {
                 );
             }
 
-            elements.push(
-                <div>
-                    <Link key={speaker.id} to={`/speaker/${speaker.id}`}>
+            if (window.innerWidth <= 768) {
+                elements.push(
+                    <div>
                         <Card speaker={speaker} />
-                    </Link>
-                </div>
-            );
+                    </div>
+                )
+            } else {
+                elements.push(
+                    <div className='hide-on-mobile'>
+                        <Link key={speaker.id} to={`/speaker/${speaker.id}`}>
+                            <Card speaker={speaker} />
+                        </Link>
+                    </div>
+                )
+            }
         });
 
         return elements;
@@ -73,15 +83,15 @@ export default function Speakers({ speakers, category, speakersHeader }) {
             <div className="header-search-container">
                 <div className='headers-container'>
                     <h1 className='speakers-header'>{speakersHeader ? speakersHeader : "Alla Snackare"}</h1>
-                    <h2 className='speakers-search-header'>Sök efter: {search}</h2>
-                </div>
-                <input
+                    <input
                     type="text"
                     className="search-input"
                     placeholder="Sök"
                     value={search}
                     onChange={handleSearch}
                 />
+                    <h2 className='speakers-search-header'>Sök efter: {search}</h2>
+                </div>
             </div>
             <div className="card-section">
                 {renderSortedCardElements()}

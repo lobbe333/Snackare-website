@@ -5,10 +5,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import HomeStartImage from './HomeStartImage';
 import HomeClients from './HomeClients';
+import HomeCards from './HomeCards';
+import HomeSlider from './HomeSlider';
 
 
 
-export default function Home({ handleCategory }) {
+export default function Home({ handleCategory, speakers }) {
 
     useEffect(() => {
         AOS.init({
@@ -23,6 +25,8 @@ return (
     <div className='background'>
         <HomeStartImage />
         <HomeCategories/>
+        {/*<HomeSlider speakers={speakers}/>*/}
+        <HomeCards />
         <HomeClients />
     </div>
 )

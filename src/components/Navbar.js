@@ -51,8 +51,8 @@ export default function Navbar() {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {['Hem', 'Föreläsare', 'Om oss', 'Kontakta oss'].map((text, index) => (
-                    <ListItem button key={text} component={Link} to={["/", "/speakers", "/about", "/contact"][index]} className='nav-link-mobile'>
+                {['Hem', 'Våra föreläsare', 'Om oss'].map((text, index) => (
+                    <ListItem button key={text} component={Link} to={["/", "/speakers", "/about"][index]} className='nav-link-mobile'>
                         <ListItemText primary={text} primaryTypographyProps={{style: {fontFamily: 'Roboto', fontWeight: 900, fontStyle: 'italic', fontSize: 30, color: '#F16876' }}} />
                     </ListItem>
                 ))}

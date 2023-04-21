@@ -34,9 +34,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  .card-flipped {
+    transform: rotateY(180deg);
+  }
+}
 
-.card:hover {
+
+
+@media (min-width: 769px) {
+  .card:hover {
   transform: rotateY(180deg);
+  }
 }
 
 .card-front,
@@ -99,6 +108,22 @@
   align-items: start;
   padding: 15px;
 }
+
+@media (max-width: 768px) {
+  .card-information-back {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+  }
+
+  .card-information-back p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
 
 .card-information-back .name {
   color: white;
@@ -170,10 +195,12 @@
 }
 
 @media (max-width: 768px) {
+  .topics-container,
   .roles-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0;
   }
 }
 
@@ -212,4 +239,18 @@
   white-space: nowrap;
   border: 2px solid #F16876;
   /* Hindra radbrytning i ämnen */
+}
+
+.read-more-button{
+  height: 20px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 0px;
+  background-color: white;
+  border: none;
+  color: #273B7B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }

@@ -35,6 +35,8 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
+
+  
   
   .request-form label {
     font-family: 'Roboto', sans-serif;
@@ -85,3 +87,20 @@
     cursor: pointer;
   }
   
+  @media (max-width: 767px) {
+    .request-form {
+      width: 80%; /* Adjust the width of the form for smaller screens */
+      padding: 15px; /* Add some padding to the form */
+    }
+  
+    .requestForm-header {
+      font-size: 30px; /* Decrease the font size of the header */
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  
+    .request-form input,
+    .request-form textarea {
+      width: 100%; /* Make the input fields and textarea use the full width of the form */
+    }
+  }

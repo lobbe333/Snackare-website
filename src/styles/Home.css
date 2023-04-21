@@ -46,9 +46,8 @@
 
 @media (max-width: 768px) {
   .header-homeStartImage {
-    font-style: italic;
     font-size: calc(3vw + 40px);
-    color: #f16876;
+    color: white;
 
   }
 }
@@ -63,7 +62,7 @@
 @media (max-width: 768px) {
   .underHeader-homeStartImage {
     font-style: italic;
-    font-weight: 100;
+    font-weight: 600;
     font-size: calc(1vw + 15px);
   }
 }
@@ -72,7 +71,7 @@
   height: 70px;
   width: 300px;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 10px;
   border: 2px solid white;
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -186,7 +185,7 @@
   height: 70px;
   width: 300px;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 10px;
   border: 2px solid #273B7B;
   color: #273B7B;
   font-family: 'Roboto', sans-serif;
@@ -239,6 +238,16 @@
   justify-content: center;
   align-items: center;
 }
+.categories-header{
+  display: flex;
+  justify-content: center;
+  font-size: calc(2rem + 1vw);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #273B7B;
+  margin-bottom: 40px;
+}
 
 @media (max-width: 768px) {
   .home-image-container {
@@ -263,4 +272,15 @@
   .client-logo {
     height: 60px;
   }
+
+  .hide-on-mobile{
+    display: none;
+  }
+
+  .categories-header{
+    font-size: 35px;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 }
+
