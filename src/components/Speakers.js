@@ -67,10 +67,11 @@ export default function Speakers({ speakers, category, speakersHeader, isFlipped
             } else {
                 elements.push(
                     <div className='hide-on-mobile'>
-                        <Link key={speaker.id} to={`/speaker/${speaker.id}`}>
+                        <Link key={speaker.id} to={`/forelasare/${encodeURIComponent(speaker.name)}`}>
                             <Card speaker={speaker} />
                         </Link>
                     </div>
+
                 )
             }
         });
@@ -84,12 +85,12 @@ export default function Speakers({ speakers, category, speakersHeader, isFlipped
                 <div className='headers-container'>
                     <h1 className='speakers-header'>{speakersHeader ? speakersHeader : "Alla Snackare"}</h1>
                     <input
-                    type="text"
-                    className="search-input"
-                    placeholder="Sök"
-                    value={search}
-                    onChange={handleSearch}
-                />
+                        type="text"
+                        className="search-input"
+                        placeholder="Sök"
+                        value={search}
+                        onChange={handleSearch}
+                    />
                     <h2 className='speakers-search-header'>Sök efter: {search}</h2>
                 </div>
             </div>

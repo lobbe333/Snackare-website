@@ -33,7 +33,7 @@ export default function Card({ speaker }) {
   };
 
   const navigateToSpeaker = () => {
-    navigate(`/speaker/${speaker.id}`)
+    navigate(`/forelasare/${speaker.name}`)
     setIsFlipped(false)
   }
 

@@ -69,16 +69,16 @@ function App() {
               speakers={speakers}
             />
           } />
-          <Route path='/speakers' element={
+          <Route path='/forelasare' element={
             <SpeakersWrapper
               speakers={speakers}
             />
           } />
-          <Route path='/speaker/:id' element={
+          <Route path='/forelasare/:name' element={
             <SpeakerProfile speakers={speakers} />
           }
           />
-          <Route path='about' element={
+          <Route path='omoss' element={
             <About />
           }
           />

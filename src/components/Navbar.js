@@ -52,7 +52,7 @@ export default function Navbar() {
         >
             <List>
                 {['Hem', 'Våra föreläsare', 'Om oss'].map((text, index) => (
-                    <ListItem button key={text} component={Link} to={["/", "/speakers", "/about"][index]} className='nav-link-mobile'>
+                    <ListItem button key={text} component={Link} to={["/", "/forelasare", "/omoss"][index]} className='nav-link-mobile'>
                         <ListItemText primary={text} primaryTypographyProps={{style: {fontFamily: 'Roboto', fontWeight: 900, fontStyle: 'italic', fontSize: 30, color: '#F16876' }}} />
                     </ListItem>
                 ))}
@@ -79,8 +79,8 @@ export default function Navbar() {
                 </div>
                 <ul className='navbar-links'>
                     <li className='nav-link'><Link to='/'>Hem</Link></li>
-                    <li className='nav-link'><Link to='/speakers'>Föreläsare</Link></li>
-                    <li className='nav-link'><Link to='/about'>Om oss</Link></li>
+                    <li className='nav-link'><Link to='/forelasare'>Föreläsare</Link></li>
+                    <li className='nav-link'><Link to='/omoss'>Om oss</Link></li>
                     <button className='contact-us-button hide-on-mobile' onClick={handleOpenRequestForm}>Kontakta oss</button>
                     {showRequestForm && <RequestForm handleCloseRequestForm={handleCloseRequestForm} />}
                 </ul>

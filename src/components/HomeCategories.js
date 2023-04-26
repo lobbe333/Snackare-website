@@ -9,12 +9,11 @@ export default function HomeCategories() {
 
     const handleCategory = (category) => {
         setCategory(category);
-        navigate('/speakers', { state: { category } });
-        console.log("HomeCategories.js i funktion " + category);
+        navigate('/forelasare', { state: { category } });
     };
 
     const handleAllSpeakersClick = () => {
-        navigate('/speakers')
+        navigate('/forelasare')
     }
 
 

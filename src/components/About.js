@@ -50,7 +50,7 @@ export default function About() {
                 Genom att snacka, skratta och gråta vill vi sprida glädje, kunskap och inspiration. Välkommen att bli en del av vår rörelse!
             </p>
             <h2 className='employees-header'>Vi på Snackare</h2>
-            <div className='employee-cards'>
+            <div className='card-section-employee'>
                 {cardElements}
             </div>
         </div>

@@ -7,10 +7,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import RequestForm from './RequestForm';
 
 export default function SpeakerProfile({ speakers }) {
-  const { id } = useParams()
-  const speaker = speakers.find(speaker => speaker.id === id)
+  const { name } = useParams()
+  const decodedName = decodeURIComponent(name);
+  const speaker = speakers.find(speaker => speaker.name === decodedName)
   const [showRequestForm, setShowRequestForm] = useState(false)
   const [nameForForm, setNameForForm] = useState("")
+
 
   const handleOpenRequestForm = () => {
     setShowRequestForm(true)

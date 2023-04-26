@@ -20,7 +20,7 @@ export default function HomeStartImage() {
                     <source src="home_image.mp4" type="video/mp4" />
                     Din webbläsare stöder inte videokomponenten.
     </video>*/}
-                <img src='navbar_omar.jpeg' className='home-image' />
+                <img src='navbar_omar.jpeg' className='home-image' />          
                 <div className='home-image-text'>
                     <h1 className='header-homeStartImage'>Snackare</h1>
                     <h2 className='underHeader-homeStartImage'>Där idéer möts och gränser utmanas</h2>
