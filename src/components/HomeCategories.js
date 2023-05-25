@@ -1,23 +1,20 @@
 import { React, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Speakers from './Speakers';
+import { useRouter } from 'next/router' 
+import forelasare from '../../pages/forelasare';
 
 
 export default function HomeCategories() {
-    const [category, setCategory] = useState("")
-    const navigate = useNavigate()
+    const [category, setCategory] = useState(null);
+    const router = useRouter();
 
     const handleCategory = (category) => {
         setCategory(category);
-        navigate('/forelasare', { state: { category } });
+        router.push(`/forelasare?category=${category}`);
     };
 
     const handleAllSpeakersClick = () => {
-        navigate('/forelasare')
+        router.push('/forelasare')
     }
-
-
-    console.log("HomeCategories.js " + category)
 
     return (
         <div>

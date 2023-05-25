@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import '../styles/Home.css'
-import HomeCategories from './HomeCategories'
+import HomeCategories from '../src/components/HomeCategories'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import HomeStartImage from './HomeStartImage';
-import HomeClients from './HomeClients';
-import HomeCards from './HomeCards';
-import HomeSlider from './HomeSlider';
+import HomeStartImage from '../src/components/HomeStartImage'
+import HomeClients from '../src/components/HomeClients'
+import HomeCards from '../src/components/HomeCards'
+import HomeSlider from '../src/components/HomeSlider'
 
 
 

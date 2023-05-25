@@ -254,7 +254,7 @@
   background-color: white;
   color: #273B7B;
   border: 2px solid #273B7B;
-  border-radius: 0px;
+  border-radius: 10px;
   padding: 3px;
   padding-left: 10px;
   padding-right: 10px;
@@ -286,7 +286,7 @@
   height: 20px;
   width: 100%;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 10px;
   background-color: white;
   border: none;
   color: #273B7B;

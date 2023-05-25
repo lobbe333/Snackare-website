@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/RequestForm.css';
 import emailjs from 'emailjs-com'
 
 export default function RequestForm({ handleCloseRequestForm, nameForForm }) {

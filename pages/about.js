@@ -1,6 +1,6 @@
-import React from 'react'
-import '../styles/About.css'
-import AboutEmployeesCard from './AboutEmployeesCard'
+import React from 'react';
+import AboutEmployeesCard from '../src/components/AboutEmployeesCard';
+
 
 export default function About() {
 

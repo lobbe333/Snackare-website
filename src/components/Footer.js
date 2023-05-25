@@ -2,7 +2,6 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
-import '../styles/Footer.css';
 
 export default function Footer() {
   return (

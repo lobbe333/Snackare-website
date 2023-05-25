@@ -1,12 +1,49 @@
-import { React, useState, useEffect } from 'react'
-import Card from './Card'
-import '../styles/Speakers.css'
-import { Link, useLocation } from 'react-router-dom'
-import { isMobile } from 'react-device-detect';
+import React, { useState, useEffect } from 'react';
+import Card from '../src/components/Card';
+import { useRouter } from 'next/router';
+import { fetchSpeakers } from './_app';
+
+export async function getServerSideProps(context) {
+    const speakers = await fetchSpeakers();
+    const category = context.query.category || null;
+
+    console.log('Speakers fetched in getServerSideProps:', speakers);
+
+    return {
+        props: {
+            speakers,
+            category,
+        },
+    };
+}
 
 
-export default function Speakers({ speakers, category, speakersHeader, isFlipped }) {
+
+export default function Forelasare({ speakers, speakersHeader, isFlipped }) {
+    console.log('Speakers in component:', speakers);
+    const router = useRouter();
     const [search, setSearch] = useState("")
+
+    const category = router.query.category;
+
+    const categoryHeader = {
+        "lecturer": "Föreläsare",
+        "moderator": "Moderatorer",
+        "entertainer": "Underhållare"
+    }[category];
+
+
+
+    function generateSlug(name) {
+        return name
+            .toLowerCase()
+            .replace(/å/g, 'a')
+            .replace(/ä/g, 'a')
+            .replace(/ö/g, 'o')
+            .replace(/[^a-z0-9]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+    }
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
@@ -58,7 +95,7 @@ export default function Speakers({ speakers, category, speakersHeader, isFlipped
                 );
             }
 
-            if (window.innerWidth <= 768) {
+            if (typeof window !== 'undefined' && window.innerWidth <= 768) {
                 elements.push(
                     <div>
                         <Card speaker={speaker} />
@@ -66,12 +103,9 @@ export default function Speakers({ speakers, category, speakersHeader, isFlipped
                 )
             } else {
                 elements.push(
-                    <div className='hide-on-mobile'>
-                        <Link key={speaker.id} to={`/forelasare/${encodeURIComponent(speaker.name)}`}>
-                            <Card speaker={speaker} />
-                        </Link>
+                    <div className='hide-on-mobile' key={speaker.id} onClick={() => router.push(`/forelasare/${generateSlug(speaker.name)}`)}>
+                        <Card speaker={speaker} />
                     </div>
-
                 )
             }
         });
@@ -79,11 +113,12 @@ export default function Speakers({ speakers, category, speakersHeader, isFlipped
         return elements;
     }
 
+
     return (
         <div>
             <div className="header-search-container">
                 <div className='headers-container'>
-                    <h1 className='speakers-header'>{speakersHeader ? speakersHeader : "Alla Snackare"}</h1>
+                    <h1 className='speakers-header'>{categoryHeader ? categoryHeader : "Alla Snackare"}</h1>
                     <input
                         type="text"
                         className="search-input"

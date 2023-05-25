@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/Card.css'
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
 export default function AboutEmployeesCard({ employee }) {

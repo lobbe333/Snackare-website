@@ -1,7 +1,6 @@
 import { React, useState} from 'react'
-import '../styles/Card.css'
 import { NavigateBefore } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 function translateRole(role) {
   switch (role) {
@@ -16,11 +15,21 @@ function translateRole(role) {
   }
 }
 
-export default function Card({ speaker }) {
+function generateSlug(name) {
+  return name
+      .toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/[^a-z0-9]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+}
 
+export default function Card({ speaker }) {
+  const router = useRouter(); 
   const [isFlipped, setIsFlipped] = useState(false);
   const [clickCount, setClickCount] = useState(0)
-  const navigate = useNavigate()
 
   const handleCardClick = () => {
     if (window.innerWidth <= 768) {
@@ -33,7 +42,7 @@ export default function Card({ speaker }) {
   };
 
   const navigateToSpeaker = () => {
-    navigate(`/forelasare/${speaker.name}`)
+    router.push(`/forelasare/${generateSlug(speaker.name)}`);
     setIsFlipped(false)
   }
 

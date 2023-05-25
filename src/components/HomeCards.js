@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/HomeCards.css';
 
 const HomeCards = () => {
     const cards = [

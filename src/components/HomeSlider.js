@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Card from './Card';
-import '../styles/HomeSlider.css'
 
 export default function HomeSlider({ speakers }) {
     const speakerElements = speakers.map((speaker) => <Card speaker={speaker} />);
