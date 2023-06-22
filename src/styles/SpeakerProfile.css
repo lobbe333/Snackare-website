@@ -6,6 +6,10 @@
   margin-bottom: 40px;
 }
 
+.speakerProfile .carousel.carousel-slider .slide {
+  width: 50px !important;
+}
+
 .speakerProfile-name-bookButton-container {
   display: flex;
   align-items: center;
@@ -111,6 +115,11 @@
 }
 
 @media (max-width: 767px) {
+
+  .speakerProfile .carousel.carousel-slider .slide {
+    width: 45px !important;
+  }
+
   .speakerProfile {
     margin-left: 20px;
   }

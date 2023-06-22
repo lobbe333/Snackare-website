@@ -29,14 +29,14 @@ export default function RequestForm({ handleCloseRequestForm, nameForForm }) {
                     &times;
                 </span>
 
-                <label htmlFor="name">Föreläsare*</label>
-                <input type="text" id="name" name="name" value={nameForForm ? nameForForm : null} required />
+                <label htmlFor="name">Föreläsare</label>
+                <input type="text" id="name" name="name" value={nameForForm ? nameForForm : null} />
 
                 <label htmlFor="email">E-postadress*</label>
                 <input type="email" id="email" name="email" required />
 
-                <label htmlFor="organization">Företag/Organisation*</label>
-                <input type="text" id="organization" name="organization" required />
+                <label htmlFor="organization">Företag/Organisation</label>
+                <input type="text" id="organization" name="organization" />
 
                 <label htmlFor="eventDate">När?</label>
                 <input type="tect" id="eventDate" name="eventDate" />
